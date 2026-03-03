@@ -1,0 +1,23 @@
+program: src/train.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+method: random
+metric:
+  name: val_accuracy
+  goal: maximize
+parameters:
+  dataset:
+    value: "mnist"
+  epochs:
+    value: 2
+  learning_rate:
+    values: [0.001, 0.01]
+  optimizer:
+    values: ["sgd", "rmsprop"]
+  activation:
+    values: ["relu", "sigmoid"]
+  wandb_project:
+    value: "sanity_check_project"

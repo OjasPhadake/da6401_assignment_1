@@ -1,0 +1,79 @@
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            g3b1ipwst8phbkd2guyodzwbskcvltgk:
+                args:
+                    - --activation=sigmoid
+                    - --dataset=mnist
+                    - --epochs=2
+                    - --learning_rate=0.001
+                    - --optimizer=sgd
+                    - --wandb_project=sanity_check_project
+                codePath: src/train.py
+                codePathLocal: src/train.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                disk:
+                    /:
+                        total: "269427478528"
+                        used: "55999434752"
+                email: ch22b007@smail.iitm.ac.in
+                executable: /usr/bin/python3
+                git:
+                    commit: ef798049bfcd1db80d4ec4589f04961f33ac3552
+                    remote: https://github.com/OjasPhadake/da6401_assignment_1.git
+                host: Ojas
+                memory:
+                    total: "8170852352"
+                os: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35
+                program: /home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/train.py
+                python: CPython 3.10.12
+                root: /home/ojasp/my_stuff/DA6401/da6401_assignment_1
+                startedAt: "2026-03-03T09:36:39.661445Z"
+                writerId: g3b1ipwst8phbkd2guyodzwbskcvltgk
+        m: []
+        python_version: 3.10.12
+        t:
+            "1":
+                - 2
+                - 3
+                - 105
+            "2":
+                - 2
+                - 3
+                - 105
+            "3":
+                - 14
+                - 16
+            "4": 3.10.12
+            "5": 0.25.0
+            "12": 0.25.0
+            "13": linux-x86_64
+activation:
+    value: sigmoid
+batch_size:
+    value: 32
+dataset:
+    value: mnist
+epochs:
+    value: 2
+hidden_size:
+    value:
+        - 128
+learning_rate:
+    value: 0.001
+loss:
+    value: cross_entropy
+model_save_path:
+    value: src/best_model.npy
+num_layers:
+    value: 3
+optimizer:
+    value: sgd
+wandb_project:
+    value: sanity_check_project
+weight_decay:
+    value: 0
+weight_init:
+    value: xavier

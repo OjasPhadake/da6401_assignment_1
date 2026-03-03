@@ -1,0 +1,11 @@
+{"time":"2026-03-03T14:05:21.025748227+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-03T14:05:21.58524641+05:30","level":"INFO","msg":"stream: created new stream","id":"itidacht"}
+{"time":"2026-03-03T14:05:21.585379716+05:30","level":"INFO","msg":"handler: started","stream_id":"itidacht"}
+{"time":"2026-03-03T14:05:21.587243249+05:30","level":"INFO","msg":"stream: started","id":"itidacht"}
+{"time":"2026-03-03T14:05:21.587336855+05:30","level":"INFO","msg":"writer: started","stream_id":"itidacht"}
+{"time":"2026-03-03T14:05:21.587369525+05:30","level":"INFO","msg":"sender: started","stream_id":"itidacht"}
+{"time":"2026-03-03T14:14:12.792957917+05:30","level":"INFO","msg":"stream: closing","id":"itidacht"}
+{"time":"2026-03-03T14:14:13.823268176+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-03T14:14:14.217840009+05:30","level":"INFO","msg":"handler: closed","stream_id":"itidacht"}
+{"time":"2026-03-03T14:14:14.217987205+05:30","level":"INFO","msg":"sender: closed","stream_id":"itidacht"}
+{"time":"2026-03-03T14:14:14.21800166+05:30","level":"INFO","msg":"stream: closed","id":"itidacht"}

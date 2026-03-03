@@ -1,0 +1,30 @@
+program: src/train.py
+method: random  # Efficient for covering large search spaces
+metric:
+  name: val_accuracy
+  goal: maximize
+parameters:
+  dataset:
+    values: ["mnist", "fashion_mnist"]
+  epochs:
+    values: [5, 10]
+  batch_size:
+    values: [32, 64, 128]
+  optimizer:
+    values: ["sgd", "momentum", "nag", "rmsprop"]
+  learning_rate:
+    values: [0.001, 0.005, 0.01]
+  weight_decay:
+    values: [0, 0.0005, 0.5]
+  num_layers:
+    values: [2, 3, 4]
+  hidden_size:
+    values: [[128], [256, 128], [128, 128, 128], [512, 256, 128]]
+  activation:
+    values: ["relu", "sigmoid", "tanh"]
+  weight_init:
+    values: ["random", "xavier"]
+  loss:
+    values: ["cross_entropy", "mean_squared_error"]
+  wandb_project:
+    value: "your_project_name" # Mandatory CLI arg

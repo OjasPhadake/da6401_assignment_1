@@ -1,0 +1,41 @@
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+29515/29515 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26421880/26421880 [==============================] - 13s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+5148/5148 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4422102/4422102 [==============================] - 11s 2us/step
+Dataset: fashion_mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Epoch 1/10 - Loss: 0.5061
+Epoch 2/10 - Loss: 0.3973
+Epoch 3/10 - Loss: 0.3762
+Epoch 4/10 - Loss: 0.3623
+Epoch 5/10 - Loss: 0.3535
+Traceback (most recent call last):
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/train.py", line 57, in <module>
+    main()
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/train.py", line 45, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/ann/neural_network.py", line 136, in train
+    self.backward(y_batch, probs)
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/ann/neural_network.py", line 78, in backward
+    dA_prev = layer.backward(dZ)
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/ann/neural_layer.py", line 42, in backward
+    self.grad_W = np.dot(self.input_cache.T, dZ) / batch_size
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/train.py", line 57, in <module>
+    main()
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/train.py", line 45, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/ann/neural_network.py", line 136, in train
+    self.backward(y_batch, probs)
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/ann/neural_network.py", line 78, in backward
+    dA_prev = layer.backward(dZ)
+  File "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/ann/neural_layer.py", line 42, in backward
+    self.grad_W = np.dot(self.input_cache.T, dZ) / batch_size
+KeyboardInterrupt

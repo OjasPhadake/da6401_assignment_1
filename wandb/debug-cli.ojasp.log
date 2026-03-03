@@ -1,0 +1,144 @@
+2026-03-03 15:02:07 INFO Running runs: []
+2026-03-03 15:02:08 INFO Agent received command: run
+2026-03-03 15:02:08 INFO Agent starting run with config:
+	activation: relu
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.001
+	optimizer: rmsprop
+	wandb_project: sanity_check_project
+2026-03-03 15:02:08 INFO About to run command: /usr/bin/env python src/train.py --activation=relu --dataset=mnist --epochs=2 --learning_rate=0.001 --optimizer=rmsprop --wandb_project=sanity_check_project
+2026-03-03 15:02:13 INFO Running runs: ['tz80d983']
+2026-03-03 15:02:13 INFO Cleaning up finished run: tz80d983
+2026-03-03 15:02:14 INFO Agent received command: run
+2026-03-03 15:02:14 INFO Agent starting run with config:
+	activation: relu
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.001
+	optimizer: sgd
+	wandb_project: sanity_check_project
+2026-03-03 15:02:14 INFO About to run command: /usr/bin/env python src/train.py --activation=relu --dataset=mnist --epochs=2 --learning_rate=0.001 --optimizer=sgd --wandb_project=sanity_check_project
+2026-03-03 15:04:24 INFO Running runs: []
+2026-03-03 15:04:25 INFO Agent received command: run
+2026-03-03 15:04:25 INFO Agent starting run with config:
+	activation: sigmoid
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.001
+	optimizer: sgd
+	wandb_project: sanity_check_project
+2026-03-03 15:04:25 INFO About to run command: /usr/bin/env python src/train.py --activation=sigmoid --dataset=mnist --epochs=2 --learning_rate=0.001 --optimizer=sgd --wandb_project=sanity_check_project
+2026-03-03 15:04:30 INFO Running runs: ['qrjehhup']
+2026-03-03 15:04:30 INFO Cleaning up finished run: qrjehhup
+2026-03-03 15:04:31 INFO Agent received command: run
+2026-03-03 15:04:31 INFO Agent starting run with config:
+	activation: sigmoid
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.001
+	optimizer: sgd
+	wandb_project: sanity_check_project
+2026-03-03 15:04:31 INFO About to run command: /usr/bin/env python src/train.py --activation=sigmoid --dataset=mnist --epochs=2 --learning_rate=0.001 --optimizer=sgd --wandb_project=sanity_check_project
+2026-03-03 15:04:36 INFO Running runs: ['7bsowqla']
+2026-03-03 15:04:36 INFO Cleaning up finished run: 7bsowqla
+2026-03-03 15:04:37 INFO Agent received command: run
+2026-03-03 15:04:37 INFO Agent starting run with config:
+	activation: sigmoid
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.01
+	optimizer: sgd
+	wandb_project: sanity_check_project
+2026-03-03 15:04:37 INFO About to run command: /usr/bin/env python src/train.py --activation=sigmoid --dataset=mnist --epochs=2 --learning_rate=0.01 --optimizer=sgd --wandb_project=sanity_check_project
+2026-03-03 15:04:42 INFO Running runs: ['lkm63ppd']
+2026-03-03 15:04:42 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2026-03-03 15:04:42 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2026-03-03 15:06:31 INFO Running runs: []
+2026-03-03 15:06:32 INFO Agent received command: run
+2026-03-03 15:06:32 INFO Agent starting run with config:
+	activation: sigmoid
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.001
+	optimizer: sgd
+	wandb_project: sanity_check_project
+2026-03-03 15:06:32 INFO About to run command: /usr/bin/env python3 src/train.py --activation=sigmoid --dataset=mnist --epochs=2 --learning_rate=0.001 --optimizer=sgd --wandb_project=sanity_check_project
+2026-03-03 15:06:37 INFO Running runs: ['6l2k8vmc']
+2026-03-03 15:08:51 INFO Cleaning up finished run: 6l2k8vmc
+2026-03-03 15:08:52 INFO Agent received command: run
+2026-03-03 15:08:52 INFO Agent starting run with config:
+	activation: sigmoid
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.01
+	optimizer: sgd
+	wandb_project: sanity_check_project
+2026-03-03 15:08:52 INFO About to run command: /usr/bin/env python3 src/train.py --activation=sigmoid --dataset=mnist --epochs=2 --learning_rate=0.01 --optimizer=sgd --wandb_project=sanity_check_project
+2026-03-03 15:08:57 INFO Running runs: ['4yq40b1q']
+2026-03-03 15:10:44 INFO Cleaning up finished run: 4yq40b1q
+2026-03-03 15:10:45 INFO Agent received command: run
+2026-03-03 15:10:45 INFO Agent starting run with config:
+	activation: relu
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.001
+	optimizer: rmsprop
+	wandb_project: sanity_check_project
+2026-03-03 15:10:45 INFO About to run command: /usr/bin/env python3 src/train.py --activation=relu --dataset=mnist --epochs=2 --learning_rate=0.001 --optimizer=rmsprop --wandb_project=sanity_check_project
+2026-03-03 15:10:50 INFO Running runs: ['24we3b4e']
+2026-03-03 15:12:37 INFO Cleaning up finished run: 24we3b4e
+2026-03-03 15:12:38 INFO Agent received command: run
+2026-03-03 15:12:38 INFO Agent starting run with config:
+	activation: relu
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.001
+	optimizer: rmsprop
+	wandb_project: sanity_check_project
+2026-03-03 15:12:38 INFO About to run command: /usr/bin/env python3 src/train.py --activation=relu --dataset=mnist --epochs=2 --learning_rate=0.001 --optimizer=rmsprop --wandb_project=sanity_check_project
+2026-03-03 15:12:43 INFO Running runs: ['clvjnfxf']
+2026-03-03 15:15:08 INFO Cleaning up finished run: clvjnfxf
+2026-03-03 15:15:10 INFO Agent received command: run
+2026-03-03 15:15:10 INFO Agent starting run with config:
+	activation: relu
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.01
+	optimizer: rmsprop
+	wandb_project: sanity_check_project
+2026-03-03 15:15:10 INFO About to run command: /usr/bin/env python3 src/train.py --activation=relu --dataset=mnist --epochs=2 --learning_rate=0.01 --optimizer=rmsprop --wandb_project=sanity_check_project
+2026-03-03 15:15:15 INFO Running runs: ['v4e9v20l']
+2026-03-03 15:17:02 INFO Cleaning up finished run: v4e9v20l
+2026-03-03 15:17:03 INFO Agent received command: run
+2026-03-03 15:17:03 INFO Agent starting run with config:
+	activation: relu
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.01
+	optimizer: rmsprop
+	wandb_project: sanity_check_project
+2026-03-03 15:17:03 INFO About to run command: /usr/bin/env python3 src/train.py --activation=relu --dataset=mnist --epochs=2 --learning_rate=0.01 --optimizer=rmsprop --wandb_project=sanity_check_project
+2026-03-03 15:17:08 INFO Running runs: ['swfz1qnh']
+2026-03-03 15:29:19 INFO Running runs: []
+2026-03-03 15:29:20 INFO Agent received command: run
+2026-03-03 15:29:20 INFO Agent starting run with config:
+	activation: sigmoid
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.01
+	optimizer: rmsprop
+	wandb_project: sanity_check_project
+2026-03-03 15:29:20 INFO About to run command: /usr/bin/env python3 src/train.py --activation=sigmoid --dataset=mnist --epochs=2 --learning_rate=0.01 --optimizer=rmsprop --wandb_project=sanity_check_project
+2026-03-03 15:29:25 INFO Running runs: ['ne7f92sh']
+2026-03-03 15:31:27 INFO Cleaning up finished run: ne7f92sh
+2026-03-03 15:31:28 INFO Agent received command: run
+2026-03-03 15:31:28 INFO Agent starting run with config:
+	activation: sigmoid
+	dataset: mnist
+	epochs: 2
+	learning_rate: 0.01
+	optimizer: sgd
+	wandb_project: sanity_check_project
+2026-03-03 15:31:28 INFO About to run command: /usr/bin/env python3 src/train.py --activation=sigmoid --dataset=mnist --epochs=2 --learning_rate=0.01 --optimizer=sgd --wandb_project=sanity_check_project
+2026-03-03 15:31:33 INFO Running runs: ['27octkyj']

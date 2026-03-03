@@ -1,0 +1,4 @@
+Dataset: mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
