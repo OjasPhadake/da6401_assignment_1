@@ -5,10 +5,10 @@ Handles forward and backward propagation loops
 
 import numpy as np
 import wandb
-from src.ann.neural_layer import NeuralLayer
-from src.ann.activations import Sigmoid, ReLU, Tanh, Softmax
-from src.ann.objective_functions import cross_entropy, mse, get_loss_grad
-from src.ann.optimizers import SGD, Momentum, NAG, RMSProp
+from .neural_layer import NeuralLayer
+from .activations import Sigmoid, ReLU, Tanh, Softmax
+from .objective_functions import cross_entropy, mse, get_loss_grad
+from .optimizers import SGD, Momentum, NAG, RMSProp
 
 print("DEBUG: neural_network.py successfully loaded")
 
