@@ -65,16 +65,26 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from utils.data_loader import load_data
 
 def parse_arguments():
-    # CLI for inference must match train.py 
-    parser = argparse.ArgumentParser(description='Run inference on test set')
-    parser.add_argument('-d', '--dataset', type=str, default='mnist')
-    parser.add_argument('-w_p', '--wandb_project', type=str, required=True)
-    parser.add_argument('--model_path', type=str, default='src/best_model.npy')
-    # Include same architecture arguments as train.py to initialize the model
+    parser = argparse.ArgumentParser(description='Train a neural network')
+    # Dataset and training basics
+    parser.add_argument('-d', '--dataset', type=str, choices=['mnist', 'fashion_mnist'], default='mnist')
+    parser.add_argument('-e', '--epochs', type=int, default=10)
+    parser.add_argument('-b', '--batch_size', type=int, default=32)
+    parser.add_argument('-lr', '--learning_rate', type=float, default=0.001)
+    parser.add_argument('-wd', '--weight_decay', type=float, default=0.0)
+    
+    # Architecture and Optimization
+    parser.add_argument('-o', '--optimizer', type=str, choices=['sgd', 'momentum', 'nag', 'rmsprop'], default='sgd')
+    parser.add_argument('-nhl', '--num_layers', type=int, default=3)
     parser.add_argument('-sz', '--hidden_size', type=int, nargs='+', default=[128])
-    parser.add_argument('-a', '--activation', type=str, default='relu')
-    parser.add_argument('-o', '--optimizer', type=str, default='sgd')
-    # ... include other mandatory args from train.py ...
+    parser.add_argument('-a', '--activation', type=str, choices=['sigmoid', 'tanh', 'relu'], default='relu')
+    parser.add_argument('-w_i', '--weight_init', type=str, choices=['random', 'xavier'], default='xavier')
+    parser.add_argument('-l', '--loss', type=str, choices=['mean_squared_error', 'cross_entropy'], default='cross_entropy')
+
+    # Mandatory W&B and Save arguments [cite: 427]
+    parser.add_argument('-w_p', '--wandb_project', type=str, required=True, help='W&B Project ID')
+    parser.add_argument('--model_path', type=str, default='src/best_model.npy', help='Path to saved weights')    
+    
     return parser.parse_args()
 
 def load_model(model_path):
@@ -92,7 +102,9 @@ def main():
     model.set_weights(weights)
     
     # Forward pass gets raw logits 
-    logits = model.forward(x_test)
+    logits = model.forward(x_test)  
+    # During inference or testing
+    logits = model.forward(x_test) # Test with a single sample
     preds = np.argmax(logits, axis=1) # Logits work for argmax
     
     # Calculate Metrics [cite: 422]

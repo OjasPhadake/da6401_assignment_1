@@ -21,3 +21,4 @@ parameters:
     values: ["relu", "sigmoid"]
   wandb_project:
     value: "sanity_check_project"
+run_cap: 2

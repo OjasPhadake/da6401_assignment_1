@@ -17,7 +17,7 @@ def cross_entropy(y_pred, y_true):
 
 def mse(y_pred, y_true_onehot):
     return np.mean(np.square(y_pred - y_true_onehot))
-
+    
 def get_loss_grad(y_pred, y_true, loss_type):
     m = y_true.shape[0]
     if loss_type == 'cross_entropy':

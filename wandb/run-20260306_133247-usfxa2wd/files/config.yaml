@@ -1,0 +1,115 @@
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            pi2g29mftqdsze22a0p3r0lcvt2409xn:
+                args:
+                    - --activation=sigmoid
+                    - --dataset=mnist
+                    - --epochs=2
+                    - --learning_rate=0.001
+                    - --optimizer=sgd
+                    - --wandb_project=sanity_check_project
+                codePath: src/train.py
+                codePathLocal: src/train.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                disk:
+                    /:
+                        total: "269427478528"
+                        used: "55927799808"
+                email: ch22b007@smail.iitm.ac.in
+                executable: /usr/bin/python3
+                git:
+                    commit: 6cc88282e5849e1c2385cd45e8f64830cbfad6f9
+                    remote: https://github.com/OjasPhadake/da6401_assignment_1.git
+                host: Ojas
+                memory:
+                    total: "8170852352"
+                os: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35
+                program: /home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/train.py
+                python: CPython 3.10.12
+                root: /home/ojasp/my_stuff/DA6401/da6401_assignment_1
+                startedAt: "2026-03-06T08:02:47.282985Z"
+                writerId: pi2g29mftqdsze22a0p3r0lcvt2409xn
+        m: []
+        python_version: 3.10.12
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 105
+            "2":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 105
+            "3":
+                - 14
+                - 16
+                - 62
+            "4": 3.10.12
+            "5": 0.25.0
+            "12": 0.25.0
+            "13": linux-x86_64
+        visualize:
+            conf_mat:
+                panel_config:
+                    fieldSettings:
+                        Actual: Actual
+                        Predicted: Predicted
+                        nPredictions: nPredictions
+                    panelDefId: wandb/confusion_matrix/v1
+                    stringSettings:
+                        title: Confusion Matrix Curve
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: conf_mat_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+activation:
+    value: sigmoid
+batch_size:
+    value: 32
+dataset:
+    value: mnist
+epochs:
+    value: 2
+hidden_size:
+    value:
+        - 128
+learning_rate:
+    value: 0.001
+loss:
+    value: cross_entropy
+model_save_path:
+    value: src/best_model.npy
+num_layers:
+    value: 3
+optimizer:
+    value: sgd
+wandb_project:
+    value: sanity_check_project
+weight_decay:
+    value: 0
+weight_init:
+    value: xavier

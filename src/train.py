@@ -10,6 +10,8 @@ import json
 import os
 from ann.neural_network import NeuralNetwork
 from utils.data_loader import load_data
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+import matplotlib.pyplot as plt
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Train a neural network')
@@ -66,14 +68,34 @@ def main():
     (x_train, y_train), (x_val, y_val) = load_data(args.dataset)
     model = NeuralNetwork(args) # Pass the full args object
     log_data_exploration(x_train, y_train, args.dataset)
-    
+
+    best_f1 = -1.0
     # Training logic calling model.train()
     model.train(x_train, y_train, args.epochs, args.batch_size)
     
     val_accuracy = model.evaluate(x_val, y_val)
+    y_pred = model.pred(x_val)
     
     # Log to wandb summary so the sweep can see the final result
     wandb.log({"val_accuracy": val_accuracy})
+    wandb.log({
+        "conf_mat": wandb.plot.confusion_matrix(
+            probs=None,                # Use None if passing discrete preds
+            y_true=y_val, 
+            preds=y_pred,
+            class_names=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        )
+    })
+    
+    metrics = {
+        "val_accuracy": accuracy_score(y_val, y_pred),
+        "val_precision": precision_score(y_val, y_pred, average='macro'),
+        "val_recall": recall_score(y_val, y_pred, average='macro'),
+        "val_f1": f1_score(y_val, y_pred, average='macro')
+    }
+
+    wandb.log(metrics)
+    
     wandb.run.summary["val_accuracy"] = val_accuracy
     print(f"Final Validation Accuracy: {val_accuracy:.4f}")
     

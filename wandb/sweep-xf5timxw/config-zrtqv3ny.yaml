@@ -1,0 +1,14 @@
+wandb_version: 1
+
+activation:
+  value: relu
+dataset:
+  value: mnist
+epochs:
+  value: 2
+learning_rate:
+  value: 0.01
+optimizer:
+  value: sgd
+wandb_project:
+  value: sanity_check_project

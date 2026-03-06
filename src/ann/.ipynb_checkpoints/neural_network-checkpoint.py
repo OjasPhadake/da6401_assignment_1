@@ -145,3 +145,9 @@ class NeuralNetwork:
         probs = Softmax().forward(logits)
         predictions = np.argmax(probs, axis=1)
         return np.mean(predictions == y)
+
+    def pred(self, X):
+        logits = self.forward(X)
+        probs = Softmax().forward(logits) # Probabilities
+        predictions = np.argmax(probs, axis=1) # Predicted classes
+        return predictions

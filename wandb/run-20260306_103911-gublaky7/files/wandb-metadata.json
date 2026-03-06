@@ -1,0 +1,36 @@
+{
+  "os":  "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.12",
+  "startedAt":  "2026-03-06T05:09:11.325326Z",
+  "args":  [
+    "--activation=relu",
+    "--dataset=mnist",
+    "--epochs=2",
+    "--learning_rate=0.01",
+    "--optimizer=rmsprop",
+    "--wandb_project=sanity_check_project"
+  ],
+  "program":  "/home/ojasp/my_stuff/DA6401/da6401_assignment_1/src/train.py",
+  "codePath":  "src/train.py",
+  "codePathLocal":  "src/train.py",
+  "git":  {
+    "remote":  "https://github.com/OjasPhadake/da6401_assignment_1.git",
+    "commit":  "6cc88282e5849e1c2385cd45e8f64830cbfad6f9"
+  },
+  "email":  "ch22b007@smail.iitm.ac.in",
+  "root":  "/home/ojasp/my_stuff/DA6401/da6401_assignment_1",
+  "host":  "Ojas",
+  "executable":  "/usr/bin/python3",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "disk":  {
+    "/":  {
+      "total":  "269427478528",
+      "used":  "55925833728"
+    }
+  },
+  "memory":  {
+    "total":  "8170852352"
+  },
+  "writerId":  "8lws5cnn9dpajyvwllsjwt9tfmensxpv"
+}
