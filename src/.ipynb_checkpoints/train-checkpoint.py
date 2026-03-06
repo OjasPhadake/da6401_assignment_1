@@ -66,6 +66,11 @@ def main():
     wandb.init(project=args.wandb_project, config=vars(args))
     
     (x_train, y_train), (x_val, y_val) = load_data(args.dataset)
+    if isinstance(args.hidden_size, str):
+    # Convert "[128, 128, 128]" to [128, 128, 128]
+        import ast
+        args.hidden_size = ast.literal_eval(args.hidden_size)
+        
     model = NeuralNetwork(args) # Pass the full args object
     log_data_exploration(x_train, y_train, args.dataset)
 
