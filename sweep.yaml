@@ -1,4 +1,9 @@
 program: src/train.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
 method: random  # Efficient for covering large search spaces
 metric:
   name: val_accuracy
@@ -27,4 +32,5 @@ parameters:
   loss:
     values: ["cross_entropy", "mean_squared_error"]
   wandb_project:
-    value: "your_project_name" # Mandatory CLI arg
+    value: "da6401_assn" # Mandatory CLI arg
+run_cap: 100
