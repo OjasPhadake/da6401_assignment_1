@@ -1,0 +1,11 @@
+{"time":"2026-03-06T17:03:51.906804603+05:30","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-03-06T17:03:52.468843428+05:30","level":"INFO","msg":"stream: created new stream","id":"rndej4ku"}
+{"time":"2026-03-06T17:03:52.468909394+05:30","level":"INFO","msg":"handler: started","stream_id":"rndej4ku"}
+{"time":"2026-03-06T17:03:52.469206349+05:30","level":"INFO","msg":"stream: started","id":"rndej4ku"}
+{"time":"2026-03-06T17:03:52.469210546+05:30","level":"INFO","msg":"writer: started","stream_id":"rndej4ku"}
+{"time":"2026-03-06T17:03:52.469280229+05:30","level":"INFO","msg":"sender: started","stream_id":"rndej4ku"}
+{"time":"2026-03-06T17:05:00.135656905+05:30","level":"INFO","msg":"stream: closing","id":"rndej4ku"}
+{"time":"2026-03-06T17:05:03.883863453+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-06T17:05:04.449466958+05:30","level":"INFO","msg":"handler: closed","stream_id":"rndej4ku"}
+{"time":"2026-03-06T17:05:04.449617985+05:30","level":"INFO","msg":"sender: closed","stream_id":"rndej4ku"}
+{"time":"2026-03-06T17:05:04.449632172+05:30","level":"INFO","msg":"stream: closed","id":"rndej4ku"}

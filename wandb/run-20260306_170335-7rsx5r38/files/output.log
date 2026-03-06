@@ -1,0 +1,18 @@
+Dataset: fashion_mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Epoch 1/10 - Loss: 2.2758
+Epoch 2/10 - Loss: 2.3057
+Epoch 3/10 - Loss: 2.3056
+Epoch 4/10 - Loss: 2.3057
+Epoch 5/10 - Loss: 2.3056
+Epoch 6/10 - Loss: 2.3055
+Epoch 7/10 - Loss: 2.3056
+Epoch 8/10 - Loss: 2.3056
+Epoch 9/10 - Loss: 2.3056
+Epoch 10/10 - Loss: 2.3056
+/mnt/d_disk/ch22b007/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Final Validation Accuracy: 0.0991
+Model saved to src/best_model.npy

@@ -1,0 +1,25 @@
+2026-03-06 17:01:51,313 INFO    MainThread:3132227 [wandb_setup.py:_flush():80] Current SDK version is 0.23.0
+2026-03-06 17:01:51,313 INFO    MainThread:3132227 [wandb_setup.py:_flush():80] Configure stats pid to 3132227
+2026-03-06 17:01:51,313 INFO    MainThread:3132227 [wandb_setup.py:_flush():80] Loading settings from /mnt/d_disk/ch22b007/.config/wandb/settings
+2026-03-06 17:01:51,313 INFO    MainThread:3132227 [wandb_setup.py:_flush():80] Loading settings from /mnt/d_disk/ch22b007/da6401_assignment_1/wandb/settings
+2026-03-06 17:01:51,313 INFO    MainThread:3132227 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-03-06 17:01:51,314 INFO    MainThread:3132227 [wandb_init.py:setup_run_log_directory():713] Logging user logs to /mnt/d_disk/ch22b007/da6401_assignment_1/wandb/run-20260306_170151-ye74y7e4/logs/debug.log
+2026-03-06 17:01:51,314 INFO    MainThread:3132227 [wandb_init.py:setup_run_log_directory():714] Logging internal logs to /mnt/d_disk/ch22b007/da6401_assignment_1/wandb/run-20260306_170151-ye74y7e4/logs/debug-internal.log
+2026-03-06 17:01:51,314 INFO    MainThread:3132227 [wandb_init.py:init():840] calling init triggers
+2026-03-06 17:01:51,314 INFO    MainThread:3132227 [wandb_init.py:init():845] wandb.init called with sweep_config: {'activation': 'sigmoid', 'batch_size': 128, 'dataset': 'mnist', 'epochs': 5, 'hidden_size': [128, 128, 128], 'learning_rate': 0.01, 'loss': 'cross_entropy', 'num_layers': 3, 'optimizer': 'momentum', 'wandb_project': 'da6401_assn', 'weight_decay': 0.0005, 'weight_init': 'xavier'}
+config: {'dataset': 'mnist', 'epochs': 5, 'batch_size': 128, 'learning_rate': 0.01, 'weight_decay': 0.0005, 'optimizer': 'momentum', 'num_layers': 3, 'hidden_size': [128, 128, 128], 'activation': 'sigmoid', 'weight_init': 'xavier', 'loss': 'cross_entropy', 'wandb_project': 'da6401_assn', 'model_save_path': 'src/best_model.npy', '_wandb': {}}
+2026-03-06 17:01:51,314 INFO    MainThread:3132227 [wandb_init.py:init():888] starting backend
+2026-03-06 17:01:51,625 INFO    MainThread:3132227 [wandb_init.py:init():891] sending inform_init request
+2026-03-06 17:01:51,636 INFO    MainThread:3132227 [wandb_init.py:init():899] backend started and connected
+2026-03-06 17:01:51,637 INFO    MainThread:3132227 [wandb_run.py:_config_callback():1385] config_cb None None {'activation': 'sigmoid', 'batch_size': 128, 'dataset': 'mnist', 'epochs': 5, 'hidden_size': [128, 128, 128], 'learning_rate': 0.01, 'loss': 'cross_entropy', 'num_layers': 3, 'optimizer': 'momentum', 'wandb_project': 'da6401_assn', 'weight_decay': 0.0005, 'weight_init': 'xavier'}
+2026-03-06 17:01:51,639 INFO    MainThread:3132227 [wandb_init.py:init():969] updated telemetry
+2026-03-06 17:01:51,660 INFO    MainThread:3132227 [wandb_init.py:init():993] communicating run to backend with 90.0 second timeout
+2026-03-06 17:01:52,466 INFO    MainThread:3132227 [wandb_init.py:init():1040] starting run threads in backend
+2026-03-06 17:01:52,680 INFO    MainThread:3132227 [wandb_run.py:_console_start():2504] atexit reg
+2026-03-06 17:01:52,680 INFO    MainThread:3132227 [wandb_run.py:_redirect():2352] redirect: wrap_raw
+2026-03-06 17:01:52,680 INFO    MainThread:3132227 [wandb_run.py:_redirect():2421] Wrapping output streams.
+2026-03-06 17:01:52,681 INFO    MainThread:3132227 [wandb_run.py:_redirect():2444] Redirects installed.
+2026-03-06 17:01:52,683 INFO    MainThread:3132227 [wandb_init.py:init():1080] run started, returning control to user process
+2026-03-06 17:03:02,012 INFO    MainThread:3132227 [wandb_run.py:_config_callback():1385] config_cb ('_wandb', 'visualize', 'conf_mat') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'conf_mat_table'}], 'fields': []}]}]}}} None
+2026-03-06 17:03:03,880 INFO    wandb-AsyncioManager-main:3132227 [service_client.py:_forward_responses():80] Reached EOF.
+2026-03-06 17:03:03,880 INFO    wandb-AsyncioManager-main:3132227 [mailbox.py:close():137] Closing mailbox, abandoning 2 handles.

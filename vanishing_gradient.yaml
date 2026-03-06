@@ -1,0 +1,23 @@
+program: src/train.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+method: grid
+metric:
+  name: val_accuracy
+  goal: maximize
+parameters:
+  dataset:
+    value: "mnist"
+  optimizer:
+    value: "rmsprop"
+  hidden_size:
+    value: [128, 128, 128, 128]
+  activation:
+    values: ["sigmoid", "relu"]
+  learning_rate:
+    value: 0.001
+  wandb_project:
+    value: "vanishing_gradient_analysis"

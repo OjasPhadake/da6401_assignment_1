@@ -1,0 +1,30 @@
+Dataset: mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Traceback (most recent call last):
+  File "src/train.py", line 125, in <module>
+    main()
+  File "src/train.py", line 88, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 141, in train
+    self.backward(y_batch, probs)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 78, in backward
+    dA_prev = layer.backward(dZ)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_layer.py", line 42, in backward
+    self.grad_W = np.dot(self.input_cache.T, dZ) / batch_size
+  File "<__array_function__ internals>", line 200, in dot
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+Traceback (most recent call last):
+  File "src/train.py", line 125, in <module>
+    main()
+  File "src/train.py", line 88, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 141, in train
+    self.backward(y_batch, probs)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 78, in backward
+    dA_prev = layer.backward(dZ)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_layer.py", line 42, in backward
+    self.grad_W = np.dot(self.input_cache.T, dZ) / batch_size
+  File "<__array_function__ internals>", line 200, in dot
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'

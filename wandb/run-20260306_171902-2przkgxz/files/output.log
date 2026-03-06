@@ -1,0 +1,16 @@
+Dataset: fashion_mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Epoch 1/10 - Loss: 2.3034
+Epoch 2/10 - Loss: 2.3020
+Epoch 3/10 - Loss: 2.2997
+Epoch 4/10 - Loss: 2.2946
+Epoch 5/10 - Loss: 2.2795
+Epoch 6/10 - Loss: 2.2225
+Epoch 7/10 - Loss: 2.0780
+Epoch 8/10 - Loss: 1.8216
+Epoch 9/10 - Loss: 1.5467
+Epoch 10/10 - Loss: 1.3649
+Final Validation Accuracy: 0.4448
+Model saved to src/best_model.npy

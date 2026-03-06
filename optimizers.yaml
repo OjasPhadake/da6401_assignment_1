@@ -1,0 +1,33 @@
+program: src/train.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+method: grid  # Use grid to ensure we run exactly 4 runs (one for each optimizer)
+metric:
+  name: train_loss
+  goal: minimize
+parameters:
+  dataset:
+    value: "mnist"
+  epochs:
+    value: 5
+  batch_size:
+    value: 64
+  learning_rate:
+    value: 0.001
+  optimizer:
+    values: ["sgd", "momentum", "nag", "rmsprop"]
+  num_layers:
+    value: 3
+  hidden_size:
+    value: [128, 128, 128] # Locked architecture
+  activation:
+    value: "relu"
+  weight_init:
+    value: "xavier"
+  loss:
+    value: "cross_entropy"
+  wandb_project:
+    value: "optimizer_comparison"

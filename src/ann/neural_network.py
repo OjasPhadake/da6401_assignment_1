@@ -134,6 +134,16 @@ class NeuralNetwork:
                 
                 total_loss += batch_loss
                 self.backward(y_batch, probs)
+                layer_0_grad_W = self.layers[0].grad_W
+                
+                grad_logs = {
+                    f"grad_neuron_{i}": np.mean(np.abs(layer_0_grad_W[:, i]))
+                    for i in range(min(5, layer_0_grad_W.shape[1]))
+                }
+                wandb.log(grad_logs)
+                grad_norm = np.linalg.norm(self.layers[0].grad_W)
+                wandb.log({"grad_norm_first_layer": grad_norm})
+                
                 self.update_weights()
             
             avg_loss = total_loss / (num_samples // batch_size)

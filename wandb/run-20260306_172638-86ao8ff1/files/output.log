@@ -1,0 +1,18 @@
+Dataset: mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Epoch 1/10 - Loss: 2.3079
+Epoch 2/10 - Loss: 2.3077
+Epoch 3/10 - Loss: 2.3078
+Epoch 4/10 - Loss: 2.3076
+Epoch 5/10 - Loss: 2.3077
+Epoch 6/10 - Loss: 2.3077
+Epoch 7/10 - Loss: 2.3078
+Epoch 8/10 - Loss: 2.3077
+Epoch 9/10 - Loss: 2.3078
+Epoch 10/10 - Loss: 2.3077
+/mnt/d_disk/ch22b007/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Final Validation Accuracy: 0.1143
+Model saved to src/best_model.npy

@@ -1,0 +1,11 @@
+{"time":"2026-03-06T17:00:55.100170999+05:30","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-03-06T17:00:55.67092488+05:30","level":"INFO","msg":"stream: created new stream","id":"kimrehe2"}
+{"time":"2026-03-06T17:00:55.671197919+05:30","level":"INFO","msg":"stream: started","id":"kimrehe2"}
+{"time":"2026-03-06T17:00:55.671422637+05:30","level":"INFO","msg":"writer: started","stream_id":"kimrehe2"}
+{"time":"2026-03-06T17:00:55.671475086+05:30","level":"INFO","msg":"sender: started","stream_id":"kimrehe2"}
+{"time":"2026-03-06T17:00:55.671478082+05:30","level":"INFO","msg":"handler: started","stream_id":"kimrehe2"}
+{"time":"2026-03-06T17:01:08.88040851+05:30","level":"INFO","msg":"stream: closing","id":"kimrehe2"}
+{"time":"2026-03-06T17:01:11.075835058+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-06T17:01:11.668319561+05:30","level":"INFO","msg":"handler: closed","stream_id":"kimrehe2"}
+{"time":"2026-03-06T17:01:11.668433578+05:30","level":"INFO","msg":"sender: closed","stream_id":"kimrehe2"}
+{"time":"2026-03-06T17:01:11.668448507+05:30","level":"INFO","msg":"stream: closed","id":"kimrehe2"}

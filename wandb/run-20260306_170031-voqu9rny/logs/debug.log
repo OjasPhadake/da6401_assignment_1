@@ -1,0 +1,24 @@
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_setup.py:_flush():80] Current SDK version is 0.23.0
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_setup.py:_flush():80] Configure stats pid to 3126518
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_setup.py:_flush():80] Loading settings from /mnt/d_disk/ch22b007/.config/wandb/settings
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_setup.py:_flush():80] Loading settings from /mnt/d_disk/ch22b007/da6401_assignment_1/wandb/settings
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_init.py:setup_run_log_directory():713] Logging user logs to /mnt/d_disk/ch22b007/da6401_assignment_1/wandb/run-20260306_170031-voqu9rny/logs/debug.log
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_init.py:setup_run_log_directory():714] Logging internal logs to /mnt/d_disk/ch22b007/da6401_assignment_1/wandb/run-20260306_170031-voqu9rny/logs/debug-internal.log
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_init.py:init():840] calling init triggers
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_init.py:init():845] wandb.init called with sweep_config: {'activation': 'tanh', 'batch_size': 64, 'dataset': 'fashion_mnist', 'epochs': 5, 'hidden_size': [128, 128, 128], 'learning_rate': 0.001, 'loss': 'mean_squared_error', 'num_layers': 4, 'optimizer': 'rmsprop', 'wandb_project': 'da6401_assn', 'weight_decay': 0, 'weight_init': 'random'}
+config: {'dataset': 'fashion_mnist', 'epochs': 5, 'batch_size': 64, 'learning_rate': 0.001, 'weight_decay': 0.0, 'optimizer': 'rmsprop', 'num_layers': 4, 'hidden_size': [128, 128, 128], 'activation': 'tanh', 'weight_init': 'random', 'loss': 'mean_squared_error', 'wandb_project': 'da6401_assn', 'model_save_path': 'src/best_model.npy', '_wandb': {}}
+2026-03-06 17:00:31,280 INFO    MainThread:3126518 [wandb_init.py:init():888] starting backend
+2026-03-06 17:00:31,611 INFO    MainThread:3126518 [wandb_init.py:init():891] sending inform_init request
+2026-03-06 17:00:31,632 INFO    MainThread:3126518 [wandb_init.py:init():899] backend started and connected
+2026-03-06 17:00:31,633 INFO    MainThread:3126518 [wandb_run.py:_config_callback():1385] config_cb None None {'activation': 'tanh', 'batch_size': 64, 'dataset': 'fashion_mnist', 'epochs': 5, 'hidden_size': [128, 128, 128], 'learning_rate': 0.001, 'loss': 'mean_squared_error', 'num_layers': 4, 'optimizer': 'rmsprop', 'wandb_project': 'da6401_assn', 'weight_decay': 0, 'weight_init': 'random'}
+2026-03-06 17:00:31,636 INFO    MainThread:3126518 [wandb_init.py:init():969] updated telemetry
+2026-03-06 17:00:31,681 INFO    MainThread:3126518 [wandb_init.py:init():993] communicating run to backend with 90.0 second timeout
+2026-03-06 17:00:32,843 INFO    MainThread:3126518 [wandb_init.py:init():1040] starting run threads in backend
+2026-03-06 17:00:33,199 INFO    MainThread:3126518 [wandb_run.py:_console_start():2504] atexit reg
+2026-03-06 17:00:33,199 INFO    MainThread:3126518 [wandb_run.py:_redirect():2352] redirect: wrap_raw
+2026-03-06 17:00:33,199 INFO    MainThread:3126518 [wandb_run.py:_redirect():2421] Wrapping output streams.
+2026-03-06 17:00:33,199 INFO    MainThread:3126518 [wandb_run.py:_redirect():2444] Redirects installed.
+2026-03-06 17:00:33,212 INFO    MainThread:3126518 [wandb_init.py:init():1080] run started, returning control to user process
+2026-03-06 17:00:42,938 INFO    wandb-AsyncioManager-main:3126518 [service_client.py:_forward_responses():80] Reached EOF.
+2026-03-06 17:00:42,938 INFO    wandb-AsyncioManager-main:3126518 [mailbox.py:close():137] Closing mailbox, abandoning 2 handles.

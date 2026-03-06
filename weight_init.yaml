@@ -1,0 +1,22 @@
+program: src/train.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+method: grid
+metric:
+  name: train_loss
+  goal: minimize
+parameters:
+  weight_init:
+    values: ["random", "xavier"] # Note: 'random' usually implies small numbers, 
+                                 # define a 'zeros' mode in your code if needed.
+  hidden_size:
+    value: [128, 128, 128]
+  optimizer:
+    value: "rmsprop"
+  learning_rate:
+    value: 0.001
+  wandb_project:
+    value: "weight_init_comparison"

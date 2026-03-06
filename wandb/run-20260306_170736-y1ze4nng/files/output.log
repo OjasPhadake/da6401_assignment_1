@@ -1,0 +1,20 @@
+Dataset: fashion_mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Traceback (most recent call last):
+  File "src/train.py", line 125, in <module>
+    main()
+  File "src/train.py", line 88, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 145, in train
+    probs = Softmax().forward(logits)
+NameError: name 'val_accuracy' is not defined
+Traceback (most recent call last):
+  File "src/train.py", line 125, in <module>
+    main()
+  File "src/train.py", line 88, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 145, in train
+    probs = Softmax().forward(logits)
+NameError: name 'val_accuracy' is not defined

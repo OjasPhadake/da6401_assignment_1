@@ -1,0 +1,25 @@
+program: src/train.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+method: grid
+metric:
+  name: train_loss
+  goal: minimize
+parameters:
+  dataset:
+    value: "mnist"
+  epochs:
+    value: 10
+  optimizer:
+    value: "rmsprop"
+  hidden_size:
+    value: [128, 128, 128]
+  loss:
+    values: ["cross_entropy", "mean_squared_error"]
+  learning_rate:
+    value: 0.001
+  wandb_project:
+    value: "loss_comparison"

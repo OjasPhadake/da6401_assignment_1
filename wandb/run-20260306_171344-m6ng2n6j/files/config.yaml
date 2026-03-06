@@ -1,0 +1,147 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            ag3qfvr5mrf2r01rkqfucgao3mazjhi7:
+                args:
+                    - --activation=sigmoid
+                    - --batch_size=128
+                    - --dataset=fashion_mnist
+                    - --epochs=5
+                    - --hidden_size=[512, 256, 128]
+                    - --learning_rate=0.01
+                    - --loss=cross_entropy
+                    - --num_layers=4
+                    - --optimizer=nag
+                    - --wandb_project=da6401_assn
+                    - --weight_decay=0.5
+                    - --weight_init=xavier
+                codePath: src/train.py
+                codePathLocal: src/train.py
+                cpu_count: 64
+                cpu_count_logical: 128
+                cudaVersion: "12.7"
+                disk:
+                    /:
+                        total: "869372051456"
+                        used: "736842485760"
+                email: ch22b007@smail.iitm.ac.in
+                executable: /usr/bin/python3
+                git:
+                    commit: f79e347500c6ad6fd29a9d28c1d3616e04dd6942
+                    remote: https://github.com/OjasPhadake/da6401_assignment_1.git
+                gpu: NVIDIA RTX A6000
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-fc493a51-424d-467b-6be6-d84561ed87fe
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-c580d581-3f3b-5207-f1aa-1517e6b85c3c
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-e4183f3e-2434-20e9-c949-2ff9ef943220
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-de949f50-4e82-a9d1-2360-41cea646b452
+                host: senaicluster
+                memory:
+                    total: "134889144320"
+                os: Linux-5.15.0-125-generic-x86_64-with-glibc2.29
+                program: src/train.py
+                python: CPython 3.8.10
+                root: /mnt/d_disk/ch22b007/da6401_assignment_1
+                startedAt: "2026-03-06T11:43:44.691853Z"
+                writerId: ag3qfvr5mrf2r01rkqfucgao3mazjhi7
+        m: []
+        python_version: 3.8.10
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 105
+            "2":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 105
+            "3":
+                - 14
+                - 16
+                - 62
+            "4": 3.8.10
+            "5": 0.23.0
+            "12": 0.23.0
+            "13": linux-x86_64
+        visualize:
+            conf_mat:
+                panel_config:
+                    fieldSettings:
+                        Actual: Actual
+                        Predicted: Predicted
+                        nPredictions: nPredictions
+                    panelDefId: wandb/confusion_matrix/v1
+                    stringSettings:
+                        title: Confusion Matrix Curve
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: conf_mat_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+activation:
+    value: sigmoid
+batch_size:
+    value: 128
+dataset:
+    value: fashion_mnist
+epochs:
+    value: 5
+hidden_size:
+    value:
+        - 512
+        - 256
+        - 128
+learning_rate:
+    value: 0.01
+loss:
+    value: cross_entropy
+model_save_path:
+    value: src/best_model.npy
+num_layers:
+    value: 4
+optimizer:
+    value: nag
+wandb_project:
+    value: da6401_assn
+weight_decay:
+    value: 0.5
+weight_init:
+    value: xavier
