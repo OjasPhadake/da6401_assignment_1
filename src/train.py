@@ -37,7 +37,9 @@ def parse_arguments():
     # Mandatory W&B and Save arguments [cite: 427]
     # parser.add_argument('-w_p', '--wandb_project', type=str, required=True, help='W&B Project ID')
     parser.add_argument('-w_p', '--wandb_project', required=False, default="autograder_test")
-    parser.add_argument('--model_save_path', type=str, default='src/best_model.npy')
+    # parser.add_argument('--model_save_path', type=str, default='src/best_model.npy')
+    default_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best_model.npy')
+    parser.add_argument('--model_save_path', type=str, default=default_save_path)
     
     return parser.parse_args()
 
@@ -121,7 +123,8 @@ def main():
     best_weights = model.get_weights()
     np.save(args.model_save_path, best_weights)
     
-    with open("src/best_config.json", "w") as f:
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best_config.json')
+    with open(config_path, "w") as f:
         json.dump(vars(args), f)
 
     print(f"Model saved to {args.model_save_path}")
