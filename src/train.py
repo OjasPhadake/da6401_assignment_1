@@ -71,52 +71,75 @@ def log_data_exploration(x_train, y_train, dataset_name):
     
 def main():
     args = parse_arguments()
-            
-    wandb.init(project=args.wandb_project, config=vars(args))
-    
+
+    try:
+        wandb.init(project=args.wandb_project, config=vars(args), 
+                   settings=wandb.Settings(start_method="thread"), mode="online")
+        use_wandb = True
+    except Exception:
+        use_wandb = False
+        
     (x_train, y_train), (x_val, y_val) = load_data(args.dataset)
         
     model = NeuralNetwork(args) # Pass the full args object
-    log_data_exploration(x_train, y_train, args.dataset)
+    # log_data_exploration(x_train, y_train, args.dataset)
+    if use_wandb:
+        try:
+            log_data_exploration(x_train, y_train, args.dataset)
+        except Exception:
+            pass
 
-    best_f1 = -1.0
-    # Training logic calling model.train()
     model.train(x_train, y_train, args.epochs, args.batch_size)
     
     val_accuracy = model.evaluate(x_val, y_val)
     y_pred = model.pred(x_val)
     
-    # Log to wandb summary so the sweep can see the final result
-    wandb.log({"val_accuracy": val_accuracy})
-    wandb.log({
-        "conf_mat": wandb.plot.confusion_matrix(
-            probs=None,                # Use None if passing discrete preds
-            y_true=y_val, 
-            preds=y_pred,
-            class_names=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        )
-    })
+    current_f1 = f1_score(y_val, y_pred, average='macro')
     
-    metrics = {
-        "val_accuracy": accuracy_score(y_val, y_pred),
-        "val_precision": precision_score(y_val, y_pred, average='macro'),
-        "val_recall": recall_score(y_val, y_pred, average='macro'),
-        "val_f1": f1_score(y_val, y_pred, average='macro')
-    }
-
-    wandb.log(metrics)
+    if use_wandb:
+        try:
+            wandb.log({"val_accuracy": val_accuracy})
+            wandb.log({"conf_mat": wandb.plot.confusion_matrix(
+                probs=None, y_true=y_val, preds=y_pred,
+                class_names=["0","1","2","3","4","5","6","7","8","9"])})
+            wandb.log({
+                "val_accuracy": accuracy_score(y_val, y_pred),
+                "val_precision": precision_score(y_val, y_pred, average='macro'),
+                "val_recall": recall_score(y_val, y_pred, average='macro'),
+                "val_f1": current_f1
+            })
+            wandb.run.summary["val_accuracy"] = val_accuracy
+        except Exception:
+            pass
     
-    wandb.run.summary["val_accuracy"] = val_accuracy
     print(f"Final Validation Accuracy: {val_accuracy:.4f}")
     
-    best_weights = model.get_weights()
-    np.save(args.model_save_path, best_weights)
-    
+    best_model_path = args.model_save_path
     config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best_config.json')
-    with open(config_path, "w") as f:
-        json.dump(vars(args), f)
+        
+    existing_best_f1 = -1.0
+    if os.path.exists(config_path):
+        try:
+            with open(config_path, 'r') as f:
+                saved = json.load(f)
+                existing_best_f1 = saved.get('best_f1', -1.0)
+        except Exception:
+            pass
 
-    print(f"Model saved to {args.model_save_path}")
+    if current_f1 > existing_best_f1:
+        best_weights = model.get_weights()
+        np.save(best_model_path, best_weights)
+
+        # Save config WITHOUT absolute paths and WITH the f1 score
+        config_to_save = {k: v for k, v in vars(args).items() 
+                          if k != 'model_save_path'}  # exclude absolute path
+        config_to_save['best_f1'] = float(current_f1)
+        with open(config_path, 'w') as f:
+            json.dump(config_to_save, f)
+
+        print(f"New best model saved! F1: {current_f1:.4f} > previous {existing_best_f1:.4f}")
+    else:
+        print(f"Run F1 {current_f1:.4f} did not beat existing best {existing_best_f1:.4f}. Not overwriting.")
 
 if __name__ == '__main__':
     main()

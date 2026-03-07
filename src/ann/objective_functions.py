@@ -24,7 +24,7 @@ def get_loss_grad(y_pred, y_true, loss_type):
         grad = y_pred.copy()
         grad[range(m), y_true] -= 1
         return grad
-    elif loss_type == 'mse':
+    elif loss_type == 'mean_squared_error':
         # Add this:
         y_true_oh = np.eye(y_pred.shape[1])[y_true]
         return (2.0 / (m * y_pred.shape[1])) * (y_pred - y_true_oh)

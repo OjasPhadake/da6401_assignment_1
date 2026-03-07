@@ -137,6 +137,7 @@ class NeuralNetwork:
                 # Internal softmax for loss computation
                 probs = Softmax().forward(logits)
                 
+                
                 if self.args.loss == 'cross_entropy':
                     batch_loss = cross_entropy(probs, y_batch)
                 else:
