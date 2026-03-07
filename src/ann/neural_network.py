@@ -69,8 +69,11 @@ class NeuralNetwork:
         Backward propagation to compute and return gradients. 
         Returns (dW_list, db_list) to satisfy autograder expectation.
         """
+        exp_shifted = np.exp(y_pred - np.max(y_pred, axis=1, keepdims=True))
+        probs = exp_shifted / np.sum(exp_shifted, axis=1, keepdims=True)
+        
         # 1. Initial gradient of loss w.r.t logits
-        dZ = get_loss_grad(y_pred, y_true, self.args.loss)
+        dZ = get_loss_grad(probs, y_true, self.args.loss)
         
         dW_list = []
         db_list = []
@@ -141,7 +144,7 @@ class NeuralNetwork:
                     batch_loss = mse(probs, y_true_oh)
                 
                 total_loss += batch_loss
-                self.backward(y_batch, probs)
+                self.backward(y_batch, logits)
                 layer_0_grad_W = self.layers[0].grad_W
                 
                 grad_logs = {
