@@ -1,0 +1,11 @@
+{"time":"2026-03-07T20:28:52.526224104+05:30","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-03-07T20:28:52.991507075+05:30","level":"INFO","msg":"stream: created new stream","id":"ggnu2hxt"}
+{"time":"2026-03-07T20:28:52.99160428+05:30","level":"INFO","msg":"handler: started","stream_id":"ggnu2hxt"}
+{"time":"2026-03-07T20:28:52.991816664+05:30","level":"INFO","msg":"stream: started","id":"ggnu2hxt"}
+{"time":"2026-03-07T20:28:52.99185143+05:30","level":"INFO","msg":"writer: started","stream_id":"ggnu2hxt"}
+{"time":"2026-03-07T20:28:52.991885064+05:30","level":"INFO","msg":"sender: started","stream_id":"ggnu2hxt"}
+{"time":"2026-03-07T20:29:08.203921395+05:30","level":"INFO","msg":"stream: closing","id":"ggnu2hxt"}
+{"time":"2026-03-07T20:29:10.667921369+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-07T20:29:11.074432279+05:30","level":"INFO","msg":"handler: closed","stream_id":"ggnu2hxt"}
+{"time":"2026-03-07T20:29:11.074541557+05:30","level":"INFO","msg":"sender: closed","stream_id":"ggnu2hxt"}
+{"time":"2026-03-07T20:29:11.074551786+05:30","level":"INFO","msg":"stream: closed","id":"ggnu2hxt"}

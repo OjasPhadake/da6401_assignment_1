@@ -1,0 +1,8 @@
+Dataset: mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Epoch 1/2 - Loss: 1.7751
+Epoch 2/2 - Loss: 1.1354
+Final Validation Accuracy: 0.7951
+Run F1 0.7857 did not beat existing best 0.9782. Not overwriting.
