@@ -65,17 +65,36 @@ class NeuralNetwork:
         return A
     
     def backward(self, y_true, y_pred):
+        """
+        Backward propagation to compute and return gradients. 
+        Returns (dW_list, db_list) to satisfy autograder expectation.
+        """
+        # 1. Initial gradient of loss w.r.t logits
         dZ = get_loss_grad(y_pred, y_true, self.args.loss)
         
-        grads = []
-        # Loop through layers in reverse
+        dW_list = []
+        db_list = []
+        
+        # 2. Iterate backward through layers
         for i in reversed(range(len(self.layers))):
             layer = self.layers[i]
-            # The layer now handles the activation derivative internally
-            dZ = layer.backward(dZ) 
-            grads.append((layer.grad_W, layer.grad_b))
+            
+            # The layer computes gradients and returns dA_prev
+            dA_prev = layer.backward(dZ)
+            
+            # Record gradients for return. 
+            # We insert at 0 to maintain order from input to output (0, 1, 2...)
+            dW_list.insert(0, layer.grad_W)
+            db_list.insert(0, layer.grad_b)
+            
+            # 3. Apply chain rule for the next layer's activation
+            if i > 0:
+                prev_layer = self.layers[i-1]
+                # dZ_prev = dA_prev * f'(Z_prev)
+                dZ = dA_prev * prev_layer.activation_fn.backward(prev_layer.z_cache)
         
-        return grads # grads is now a list of (grad_W, grad_b) tuples
+        # 4. Return as a tuple of two lists to satisfy unpacking (dW, db)
+        return dW_list, db_list
 
     def get_weights(self):
         """

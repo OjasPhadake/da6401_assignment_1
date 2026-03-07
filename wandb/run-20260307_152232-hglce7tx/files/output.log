@@ -1,0 +1,16 @@
+Dataset: mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Epoch 1/10 - Loss: 1.8717
+Epoch 2/10 - Loss: 1.1176
+Epoch 3/10 - Loss: 0.7872
+Epoch 4/10 - Loss: 0.6398
+Epoch 5/10 - Loss: 0.5590
+Epoch 6/10 - Loss: 0.5077
+Epoch 7/10 - Loss: 0.4721
+Epoch 8/10 - Loss: 0.4455
+Epoch 9/10 - Loss: 0.4247
+Epoch 10/10 - Loss: 0.4080
+Final Validation Accuracy: 0.8930
+Model saved to src/best_model.npy
