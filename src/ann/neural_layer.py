@@ -32,16 +32,13 @@ class NeuralLayer:
         return self.z_cache
 
     def backward(self, dZ):
-        """
-        Computes gradients for this layer and returns the gradient for the previous layer. 
-        """
-        # dZ is the gradient of loss w.r.t Z (pre-activation)
-        batch_size = self.input_cache.shape[0]
+        # dZ is the gradient of loss w.r.t the output of the activation function
+        # Multiply by derivative of activation to get gradient w.r.t Z
+        dZ = dZ * self.activation_fn.backward(self.z_cache)
         
-        # Calculate and store gradients internally [cite: 53, 168]
+        batch_size = self.input_cache.shape[0]
         self.grad_W = np.dot(self.input_cache.T, dZ) / batch_size
         self.grad_b = np.sum(dZ, axis=0, keepdims=True) / batch_size
         
-        # Gradient of loss w.r.t input to propagate to the previous layer 
-        dA_prev = np.dot(dZ, self.W.T)
-        return dA_prev
+        # Return gradient w.r.t A_prev to pass to the next layer
+        return np.dot(dZ, self.W.T)

@@ -10,8 +10,6 @@ from .activations import Sigmoid, ReLU, Tanh, Softmax
 from .objective_functions import cross_entropy, mse, get_loss_grad
 from .optimizers import SGD, Momentum, NAG, RMSProp
 
-print("DEBUG: neural_network.py successfully loaded")
-
 class NeuralNetwork:
     """
     Main model class that orchestrates the neural network training and inference.
@@ -67,28 +65,17 @@ class NeuralNetwork:
         return A
     
     def backward(self, y_true, y_pred):
-        """
-        Backward propagation to compute and return gradients. 
-        """
-        # Note: y_pred here refers to probabilities calculated for the loss internally
-        # but the autograder expects backward to receive ground truth and predictions.
         dZ = get_loss_grad(y_pred, y_true, self.args.loss)
         
         grads = []
+        # Loop through layers in reverse
         for i in reversed(range(len(self.layers))):
             layer = self.layers[i]
-            dA_prev = layer.backward(dZ)
-            
-            # Record gradients for return 
+            # The layer now handles the activation derivative internally
+            dZ = layer.backward(dZ) 
             grads.append((layer.grad_W, layer.grad_b))
-            
-            if i > 0:
-                prev_layer = self.layers[i-1]
-                # Chain Rule: dZ_prev = dA_prev * f'(Z_prev)
-                dZ = dA_prev * prev_layer.activation_fn.backward(prev_layer.z_cache)
         
-        # Return gradients from last layer to first 
-        return grads
+        return grads # grads is now a list of (grad_W, grad_b) tuples
 
     def get_weights(self):
         """
