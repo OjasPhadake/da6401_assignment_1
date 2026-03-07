@@ -1,0 +1,124 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            vdo0awxjab3ro7yxnly7qavdb5ytlwia:
+                args:
+                    - --dataset
+                    - mnist
+                    - --epochs
+                    - "15"
+                    - --batch_size
+                    - "32"
+                    - --learning_rate
+                    - "0.001"
+                    - --optimizer
+                    - rmsprop
+                    - --hidden_size
+                    - "128"
+                    - "128"
+                    - "128"
+                    - --activation
+                    - relu
+                    - --loss
+                    - cross_entropy
+                    - --weight_init
+                    - xavier
+                    - --model_save_path
+                    - src/best_model.npy
+                codePath: src/train.py
+                codePathLocal: src/train.py
+                cpu_count: 64
+                cpu_count_logical: 128
+                cudaVersion: "12.7"
+                disk:
+                    /:
+                        total: "869372051456"
+                        used: "736931090432"
+                email: ch22b007@smail.iitm.ac.in
+                executable: /usr/bin/python3
+                git:
+                    commit: 55b796751026b2c800598910f683260ec4287e2d
+                    remote: https://github.com/OjasPhadake/da6401_assignment_1.git
+                gpu: NVIDIA RTX A6000
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-fc493a51-424d-467b-6be6-d84561ed87fe
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-c580d581-3f3b-5207-f1aa-1517e6b85c3c
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-e4183f3e-2434-20e9-c949-2ff9ef943220
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-de949f50-4e82-a9d1-2360-41cea646b452
+                host: senaicluster
+                memory:
+                    total: "134889144320"
+                os: Linux-5.15.0-125-generic-x86_64-with-glibc2.29
+                program: src/train.py
+                python: CPython 3.8.10
+                root: /mnt/d_disk/ch22b007/da6401_assignment_1
+                startedAt: "2026-03-07T14:40:24.262076Z"
+                writerId: vdo0awxjab3ro7yxnly7qavdb5ytlwia
+        m: []
+        python_version: 3.8.10
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 105
+            "2":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 105
+            "3":
+                - 16
+            "4": 3.8.10
+            "5": 0.23.0
+            "12": 0.23.0
+            "13": linux-x86_64
+activation:
+    value: relu
+batch_size:
+    value: 32
+dataset:
+    value: mnist
+epochs:
+    value: 15
+hidden_size:
+    value:
+        - 128
+        - 128
+        - 128
+learning_rate:
+    value: 0.001
+loss:
+    value: cross_entropy
+model_save_path:
+    value: src/best_model.npy
+num_layers:
+    value: 3
+optimizer:
+    value: rmsprop
+wandb_project:
+    value: autograder_test
+weight_decay:
+    value: 0
+weight_init:
+    value: xavier

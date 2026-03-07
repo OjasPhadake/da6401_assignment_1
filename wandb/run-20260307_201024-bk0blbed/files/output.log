@@ -1,0 +1,16 @@
+Dataset: mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Traceback (most recent call last):
+  File "src/train.py", line 145, in <module>
+    main()
+  File "src/train.py", line 92, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+AttributeError: 'NeuralNetwork' object has no attribute 'train'
+Traceback (most recent call last):
+  File "src/train.py", line 145, in <module>
+    main()
+  File "src/train.py", line 92, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+AttributeError: 'NeuralNetwork' object has no attribute 'train'

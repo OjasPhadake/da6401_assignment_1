@@ -245,30 +245,25 @@ class NeuralNetwork:
         return A
 
     def backward(self, y_true, y_pred):
-        """
-        Backward propagation. Accepts either raw logits or probabilities —
-        softmax is always applied internally before computing the CE gradient.
-        Returns gradients from last layer to first.
-        """
-        # Always convert to probabilities safely
         shifted = y_pred - np.max(y_pred, axis=1, keepdims=True)
         exps = np.exp(shifted)
         probs = exps / np.sum(exps, axis=1, keepdims=True)
 
         dZ = get_loss_grad(probs, y_true, self.args.loss)
 
-        grads = []
+        W_grads, b_grads = [], []
         for i in reversed(range(len(self.layers))):
             layer = self.layers[i]
             dA_prev = layer.backward(dZ)
 
-            grads.append((layer.grad_W, layer.grad_b))
+            W_grads.append(layer.grad_W)  # last layer first
+            b_grads.append(layer.grad_b)
 
             if i > 0:
                 prev_layer = self.layers[i - 1]
                 dZ = dA_prev * prev_layer.activation_fn.backward(prev_layer.z_cache)
 
-        return grads  # order: last layer first
+        return W_grads, b_grads  # 2-tuple, each list goes last->first
 
     def get_weights(self):
         weights = {}
