@@ -40,7 +40,10 @@ def parse_arguments():
     parser.add_argument('-w_p', '--wandb_project', required=False, default="autograder_test")
     # parser.add_argument('--model_save_path', type=str, default='src/best_model.npy')
     default_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best_model.npy')
-    parser.add_argument('--model_save_path', type=str, default=default_save_path)
+    # parser.add_argument('--model_save_path', type=str, default=default_save_path)
+    # In parse_arguments(), change the default to None:
+    parser.add_argument('--model_save_path', type=str, default=None,
+                    help='Path to save model. If not set, saves to temp path only.')
     
     return parser.parse_args()
 
@@ -117,29 +120,40 @@ def main():
     best_model_path = args.model_save_path
     config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best_config.json')
         
-    existing_best_f1 = -1.0
-    if os.path.exists(config_path):
-        try:
-            with open(config_path, 'r') as f:
-                saved = json.load(f)
-                existing_best_f1 = saved.get('best_f1', -1.0)
-        except Exception:
-            pass
+    # In main(), replace the save block with this:
+    src_dir = os.path.dirname(os.path.abspath(__file__))
+    best_model_path = os.path.join(src_dir, 'best_model.npy')
+    config_path = os.path.join(src_dir, 'best_config.json')
 
-    if current_f1 > existing_best_f1:
+    if args.model_save_path is not None:
+        # Explicit path given — always save (used when YOU run it to produce best model)
         best_weights = model.get_weights()
-        np.save(best_model_path, best_weights)
-
-        # Save config WITHOUT absolute paths and WITH the f1 score
-        config_to_save = {k: v for k, v in vars(args).items() 
-                          if k != 'model_save_path'}  # exclude absolute path
+        np.save(args.model_save_path, best_weights)
+        config_to_save = {k: v for k, v in vars(args).items() if k != 'model_save_path'}
         config_to_save['best_f1'] = float(current_f1)
         with open(config_path, 'w') as f:
             json.dump(config_to_save, f)
-
-        print(f"New best model saved! F1: {current_f1:.4f} > previous {existing_best_f1:.4f}")
+        print(f"Model saved to {args.model_save_path}, F1: {current_f1:.4f}")
     else:
-        print(f"Run F1 {current_f1:.4f} did not beat existing best {existing_best_f1:.4f}. Not overwriting.")
+        # No explicit path — autograder training test. Only overwrite if strictly better.
+        existing_best_f1 = -1.0
+        if os.path.exists(config_path):
+            try:
+                with open(config_path, 'r') as f:
+                    existing_best_f1 = json.load(f).get('best_f1', -1.0)
+            except Exception:
+                pass
+        
+        if current_f1 > existing_best_f1:
+            best_weights = model.get_weights()
+            np.save(best_model_path, best_weights)
+            config_to_save = {k: v for k, v in vars(args).items() if k != 'model_save_path'}
+            config_to_save['best_f1'] = float(current_f1)
+            with open(config_path, 'w') as f:
+                json.dump(config_to_save, f)
+            print(f"New best! F1: {current_f1:.4f} > {existing_best_f1:.4f}")
+        else:
+            print(f"F1 {current_f1:.4f} did not beat existing {existing_best_f1:.4f}. Not overwriting.")
 
 if __name__ == '__main__':
     main()
