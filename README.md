@@ -1,22 +1,29 @@
-# Assignment 1: Multi-Layer Perceptron for Image Classification
+# DA6401 Assignment 1: Multi-Layer Perceptron
 
-## Overview
+This repository contains the implementation of a custom Multi-Layer Perceptron (MLP) for image classification (MNIST and Fashion-MNIST). The project includes modules for neural layers, activation functions, loss calculation, and various optimization algorithms.
 
-This assignment requires you to implement a neural network from scratch using only NumPy. You will build all components including layers, activations, optimizers, and loss functions, then train your network on MNIST or Fashion-MNIST datasets.
+## Project Structure
 
-## Learning Objectives
+* `src/ann/`:
+* `neural_network.py`: Orchestrates training and inference loops.
+* `neural_layer.py`: Handles linear operations and weight initialization.
+* `activations.py`: Implements activation functions (ReLU, Sigmoid, Tanh, Softmax).
+* `objective_functions.py`: Implements Cross-Entropy and MSE loss.
+* `optimizers.py`: Implements optimization algorithms (SGD, Momentum, RMSProp).
 
-- Understand forward and backward propagation
-- Implement gradient computation manually
-- Implement various optimizers (SGD, Momentum, Adam, Nadam)
-- Work with activation functions and their derivatives
-- Train and evaluate neural networks
-- Log experiments using Weights & Biases
 
-## Contact
+## Usage
 
-For questions or issues, please contact the teaching staff or post on the course forum.
+To run the model, use the `train.py` script (ensure you have `wandb` configured):
 
----
+```bash
+python train.py --activation relu --optimizer adam --hidden_size 256 128 --weight_init xavier
 
-Good luck with your implementation!
+```
+
+## Experimental Results
+
+The comprehensive analysis, including gradient plots, hyperparameter tuning, and theory question responses, can be found in the Weights & Biases report below:
+
+* **GitHub Repository:** [https://github.com/OjasPhadake/da6401_assignment_1](https://github.com/OjasPhadake/da6401_assignment_1)
+* **W&B Report:** [https://api.wandb.ai/links/ch22b007-indian-institute-of-technology-madras/5zz82vsr](https://api.wandb.ai/links/ch22b007-indian-institute-of-technology-madras/5zz82vsr)
