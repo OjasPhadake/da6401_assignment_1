@@ -29,7 +29,9 @@ def parse_arguments():
     # Mandatory W&B and Save arguments [cite: 427]
     # parser.add_argument('-w_p', '--wandb_project', type=str, required=True, help='W&B Project ID')
     parser.add_argument('-w_p', '--wandb_project', required=False, default="autograder_test")
-    parser.add_argument('--model_path', type=str, default='src/best_model.npy', help='Path to saved weights')    
+    # parser.add_argument('--model_path', type=str, default='src/best_model.npy', help='Path to saved weights')    
+    default_model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best_model.npy')
+    parser.add_argument('--model_path', type=str, default=default_model_path, help='Path to saved weights')
     
     return parser.parse_args()
 
@@ -46,9 +48,7 @@ def main():
     model = NeuralNetwork(args)
     weights = load_model(args.model_path)
     model.set_weights(weights)
-    
-    # Forward pass gets raw logits 
-    logits = model.forward(x_test)  
+      
     # During inference or testing
     logits = model.forward(x_test) # Test with a single sample
     preds = np.argmax(logits, axis=1) # Logits work for argmax
