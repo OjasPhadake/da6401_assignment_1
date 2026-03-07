@@ -1,0 +1,28 @@
+Dataset: mnist
+Training samples: 49998
+Validation samples: 10002
+Test samples (for inference): 10000
+Traceback (most recent call last):
+  File "src/train.py", line 130, in <module>
+    main()
+  File "src/train.py", line 93, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 125, in train
+    self.backward(y_batch, probs)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 75, in backward
+    dZ = layer.backward(dZ)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_layer.py", line 37, in backward
+    dZ = dZ * self.activation_fn.backward(self.z_cache)
+AttributeError: 'Softmax' object has no attribute 'backward'
+Traceback (most recent call last):
+  File "src/train.py", line 130, in <module>
+    main()
+  File "src/train.py", line 93, in main
+    model.train(x_train, y_train, args.epochs, args.batch_size)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 125, in train
+    self.backward(y_batch, probs)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_network.py", line 75, in backward
+    dZ = layer.backward(dZ)
+  File "/mnt/d_disk/ch22b007/da6401_assignment_1/src/ann/neural_layer.py", line 37, in backward
+    dZ = dZ * self.activation_fn.backward(self.z_cache)
+AttributeError: 'Softmax' object has no attribute 'backward'
