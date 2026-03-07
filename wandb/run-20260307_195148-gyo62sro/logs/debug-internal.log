@@ -1,0 +1,23 @@
+{"time":"2026-03-07T19:51:48.708301371+05:30","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-03-07T19:51:49.141087862+05:30","level":"INFO","msg":"stream: created new stream","id":"gyo62sro"}
+{"time":"2026-03-07T19:51:49.141172343+05:30","level":"INFO","msg":"handler: started","stream_id":"gyo62sro"}
+{"time":"2026-03-07T19:51:49.141265971+05:30","level":"INFO","msg":"stream: started","id":"gyo62sro"}
+{"time":"2026-03-07T19:51:49.141302401+05:30","level":"INFO","msg":"writer: started","stream_id":"gyo62sro"}
+{"time":"2026-03-07T19:51:49.141373316+05:30","level":"INFO","msg":"sender: started","stream_id":"gyo62sro"}
+{"time":"2026-03-07T19:52:04.91115688+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":2946}
+{"time":"2026-03-07T19:52:05.167962161+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":165}
+{"time":"2026-03-07T19:52:20.067668564+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":9444}
+{"time":"2026-03-07T19:52:20.230871909+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":114}
+{"time":"2026-03-07T19:52:34.91535104+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":16585}
+{"time":"2026-03-07T19:52:35.191865791+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":174}
+{"time":"2026-03-07T19:52:49.910817182+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":24442}
+{"time":"2026-03-07T19:52:50.239310042+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":222}
+{"time":"2026-03-07T19:53:04.916955245+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":31853}
+{"time":"2026-03-07T19:53:05.169838669+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":165}
+{"time":"2026-03-07T19:53:19.91191877+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":38666}
+{"time":"2026-03-07T19:53:20.229988367+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":204}
+{"time":"2026-03-07T19:53:38.005815534+05:30","level":"INFO","msg":"stream: closing","id":"gyo62sro"}
+{"time":"2026-03-07T19:53:40.321921683+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-07T19:53:40.690367266+05:30","level":"INFO","msg":"handler: closed","stream_id":"gyo62sro"}
+{"time":"2026-03-07T19:53:40.690475001+05:30","level":"INFO","msg":"sender: closed","stream_id":"gyo62sro"}
+{"time":"2026-03-07T19:53:40.690484469+05:30","level":"INFO","msg":"stream: closed","id":"gyo62sro"}
