@@ -29,7 +29,8 @@ def parse_arguments():
     # Architecture and Optimization
     parser.add_argument('-o', '--optimizer', type=str, choices=['sgd', 'momentum', 'nag', 'rmsprop'], default='sgd')
     parser.add_argument('-nhl', '--num_layers', type=int, default=3)
-    parser.add_argument('-sz', '--hidden_size', type=str, nargs='+', default=[128])
+    # parser.add_argument('-sz', '--hidden_size', type=str, nargs='+', default=[128])
+    parser.add_argument('-sz', '--hidden_size', type=int, nargs='+', default=[128, 128, 128])
     parser.add_argument('-a', '--activation', type=str, choices=['sigmoid', 'tanh', 'relu'], default='relu')
     parser.add_argument('-w_i', '--weight_init', type=str, choices=['random', 'xavier'], default='xavier')
     parser.add_argument('-l', '--loss', type=str, choices=['mean_squared_error', 'cross_entropy'], default='cross_entropy')
@@ -70,22 +71,10 @@ def log_data_exploration(x_train, y_train, dataset_name):
     
 def main():
     args = parse_arguments()
-    if isinstance(args.hidden_size, list) and isinstance(args.hidden_size[0], str):
-        full_str = "".join(args.hidden_size)
-        if "[" in full_str:
-            import ast
-            args.hidden_size = ast.literal_eval(full_str)
-        else:
-            # If they were just space separated numbers like 128 64
-            args.hidden_size = [int(x) for x in args.hidden_size]
             
     wandb.init(project=args.wandb_project, config=vars(args))
     
     (x_train, y_train), (x_val, y_val) = load_data(args.dataset)
-    if isinstance(args.hidden_size, str):
-    # Convert "[128, 128, 128]" to [128, 128, 128]
-        import ast
-        args.hidden_size = ast.literal_eval(args.hidden_size)
         
     model = NeuralNetwork(args) # Pass the full args object
     log_data_exploration(x_train, y_train, args.dataset)

@@ -1,0 +1,21 @@
+{"time":"2026-03-07T19:17:51.715316077+05:30","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2026-03-07T19:17:52.140920638+05:30","level":"INFO","msg":"stream: created new stream","id":"fda4t9i6"}
+{"time":"2026-03-07T19:17:52.14103773+05:30","level":"INFO","msg":"handler: started","stream_id":"fda4t9i6"}
+{"time":"2026-03-07T19:17:52.141218194+05:30","level":"INFO","msg":"stream: started","id":"fda4t9i6"}
+{"time":"2026-03-07T19:17:52.141255224+05:30","level":"INFO","msg":"writer: started","stream_id":"fda4t9i6"}
+{"time":"2026-03-07T19:17:52.141272507+05:30","level":"INFO","msg":"sender: started","stream_id":"fda4t9i6"}
+{"time":"2026-03-07T19:18:07.775057372+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":16595}
+{"time":"2026-03-07T19:18:08.067892001+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":375}
+{"time":"2026-03-07T19:18:22.776447719+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":34769}
+{"time":"2026-03-07T19:18:23.092172718+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":387}
+{"time":"2026-03-07T19:18:37.776843229+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":53747}
+{"time":"2026-03-07T19:18:38.123368072+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":411}
+{"time":"2026-03-07T19:18:52.776900772+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":71927}
+{"time":"2026-03-07T19:18:53.086204264+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":369}
+{"time":"2026-03-07T19:19:07.777366589+05:30","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":90125}
+{"time":"2026-03-07T19:19:08.066262619+05:30","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":357}
+{"time":"2026-03-07T19:19:12.389686645+05:30","level":"INFO","msg":"stream: closing","id":"fda4t9i6"}
+{"time":"2026-03-07T19:19:14.599667447+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-07T19:19:15.204695244+05:30","level":"INFO","msg":"handler: closed","stream_id":"fda4t9i6"}
+{"time":"2026-03-07T19:19:15.204807518+05:30","level":"INFO","msg":"sender: closed","stream_id":"fda4t9i6"}
+{"time":"2026-03-07T19:19:15.204828207+05:30","level":"INFO","msg":"stream: closed","id":"fda4t9i6"}

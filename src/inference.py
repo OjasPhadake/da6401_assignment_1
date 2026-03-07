@@ -42,6 +42,21 @@ def load_model(model_path):
 
 def main():
     args = parse_arguments()
+
+    # Load best config to ensure architecture matches the saved weights
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best_config.json')
+    if os.path.exists(config_path):
+        import json
+        with open(config_path, 'r') as f:
+            best_config = json.load(f)
+        # Override architecture args from saved config
+        args.hidden_size = best_config.get('hidden_size', args.hidden_size)
+        args.num_layers = best_config.get('num_layers', args.num_layers)
+        args.activation = best_config.get('activation', args.activation)
+        args.optimizer = best_config.get('optimizer', args.optimizer)
+        args.weight_init = best_config.get('weight_init', args.weight_init)
+        args.loss = best_config.get('loss', args.loss)
+        
     _, (x_test, y_test) = load_data(args.dataset) # Load test split
     
     # Initialize model and load weights [cite: 441, 443]
